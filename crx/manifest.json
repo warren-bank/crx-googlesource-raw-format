@@ -1,0 +1,19 @@
+{
+  "name": "GoogleSource Raw Format",
+  "version": "1.0.0",
+  "description": "Enable downloading files from repos in raw format on 'GoogleSource' website",
+  "content_scripts": [{
+    "matches": [
+      "*://*.googlesource.com/*"
+    ],
+    "all_frames": true,
+    "run_at": "document_idle",
+    "js": ["content.js"]
+  }],
+  "icons": {
+      "16": "img/icon16.png",
+      "48": "img/icon48.png",
+     "128": "img/icon128.png"
+  },
+  "manifest_version": 2
+}
