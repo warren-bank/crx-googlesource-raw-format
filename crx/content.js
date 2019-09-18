@@ -65,6 +65,8 @@ var payload = function(){
 
       // trigger download dialog
       anchor.click()
+
+      return name
     })
     .catch(error => {})
   }
@@ -98,8 +100,9 @@ var payload = function(){
     ) {
       document.body.innerHTML = '<h3>Downloading&hellip;</h3>'
       download_raw_format()
-      .then(() => {
+      .then((name) => {
         document.body.innerHTML = '<h3>Download complete!</h3>'
+        document.title = name || 'raw download'
       })
     }
     else {
