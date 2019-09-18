@@ -13,13 +13,21 @@ Chrome extension for "GoogleSource" website to enable downloading files from rep
   * a download dialog appears
   * you can choose where to save the file
 
+#### URL Querystring Detection:
+
+* adds support for the URL querystring parameter: `?format=RAW`
+  * automatic download is triggered when detected at page load
+
 #### Examples:
 
-* "aapt.exe" v0.2-4509860
+* "aapt" v0.2-4509860
   * [Windows](https://android.googlesource.com/platform/prebuilts/sdk/+/platform-tools-29.0.3/tools/windows/bin/aapt.exe)
   * [Linux](https://android.googlesource.com/platform/prebuilts/sdk/+/platform-tools-29.0.3/tools/linux/bin/aapt)
 * "apksigner.jar" v27.0.3
   * [cross-platform](https://chromium.googlesource.com/android_tools/+/c22a664c39af72dd8f89200220713dcad811300a/sdk/build-tools/27.0.3/lib/apksigner.jar)
+* arbitrary .xml file
+  * [pretty print](https://android.googlesource.com/platform/manifest/+/refs/heads/master/default.xml)
+  * [direct download](https://android.googlesource.com/platform/manifest/+/refs/heads/master/default.xml?format=RAW)
 
 #### Legal:
 
