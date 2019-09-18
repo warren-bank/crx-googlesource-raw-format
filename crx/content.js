@@ -4,12 +4,15 @@ var payload = function(){
   const download_raw_format = function(event) {
     if (enable_debugger) debugger;
 
-    event.preventDefault()
-    event.stopPropagation()
+    if (event) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
 
     const url = window.location.protocol + '//' + window.location.hostname + window.location.pathname + '?format=TEXT'
 
-    fetch(url)
+    // Promise
+    return fetch(url)
     .then(response => {
       if (
            (!response.ok)
@@ -86,7 +89,25 @@ var payload = function(){
     links_container.appendChild(new_link)
   }
 
-  inject_link()
+  const init = function() {
+    const qs_pattern = /[\?&]format=RAW(?:[&]|$)/i
+
+    if (
+         (qs_pattern.test(window.location.search))
+      && (document.body.innerText.trim() === '400: Bad Request')
+    ) {
+      document.body.innerHTML = '<h3>Downloading&hellip;</h3>'
+      download_raw_format()
+      .then(() => {
+        document.body.innerHTML = '<h3>Download complete!</h3>'
+      })
+    }
+    else {
+      inject_link()
+    }
+  }
+
+  init()
 }
 
 var get_hash_code = function(str){
