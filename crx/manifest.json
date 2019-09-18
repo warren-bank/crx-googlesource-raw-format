@@ -1,6 +1,6 @@
 {
   "name": "GoogleSource Raw Format",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Enable downloading files from repos in raw format on 'GoogleSource' website",
   "content_scripts": [{
     "matches": [

@@ -99,10 +99,13 @@ var payload = function(){
       && (document.body.innerText.trim() === '400: Bad Request')
     ) {
       document.body.innerHTML = '<h3>Downloading&hellip;</h3>'
+      document.title = 'raw download'
+
       download_raw_format()
       .then((name) => {
         document.body.innerHTML = '<h3>Download complete!</h3>'
-        document.title = name || 'raw download'
+        if (name)
+          document.title = name
       })
     }
     else {
