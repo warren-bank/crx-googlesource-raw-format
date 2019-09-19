@@ -56,7 +56,9 @@ var payload = function(){
         throw 'error'
       }
 
-      const name = window.location.pathname.replace(/^.*\/([^\/]+)$/, '$1')
+      const name = (window.location.pathname[window.location.pathname.length - 1] === '/')
+        ? 'directory-index.txt'
+        : window.location.pathname.replace(/^.*\/([^\/]+)$/, '$1')
 
       // construct an in-memory download link
       const anchor = document.createElement('a')
