@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GoogleSource Raw Format
 // @description  Enable downloading files from repos in raw format on 'GoogleSource' website
-// @version      2.1.1
+// @version      2.1.2
 // @match        *://*.googlesource.com/*
 // @run-at       document-idle
 // @icon         https://opensource.google.com/assets/static/images/favicon.png
@@ -83,7 +83,9 @@ var payload = function(){
         throw 'error'
       }
 
-      const name = window.location.pathname.replace(/^.*\/([^\/]+)$/, '$1')
+      const name = (window.location.pathname[window.location.pathname.length - 1] === '/')
+        ? 'directory-index.txt'
+        : window.location.pathname.replace(/^.*\/([^\/]+)$/, '$1')
 
       // construct an in-memory download link
       const anchor = document.createElement('a')
