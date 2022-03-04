@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         GoogleSource Raw Format
 // @description  Enable downloading files from repos in raw format on 'GoogleSource' website
-// @version      2.1.2
+// @version      2.1.3
 // @match        *://*.googlesource.com/*
 // @run-at       document-idle
-// @icon         https://opensource.google.com/assets/static/images/favicon.png
+// @icon         https://opensource.google/_pwa/opensource/icons/icon-96x96.png
 // @homepage     https://github.com/warren-bank/crx-googlesource-raw-format
 // @supportURL   https://github.com/warren-bank/crx-googlesource-raw-format/issues
 // @downloadURL  https://github.com/warren-bank/crx-googlesource-raw-format/raw/greasemonkey-userscript/greasemonkey-userscript/googlesource-raw-format.user.js
